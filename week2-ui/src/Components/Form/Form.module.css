@@ -1,0 +1,23 @@
+.formContainer {
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 25px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.formTitle {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #222;
+  text-align: center;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}

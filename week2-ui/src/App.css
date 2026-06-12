@@ -1,0 +1,59 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f3f4f6; /* डार्क मोड के लिए टेक्स्ट कलर */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #374151;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.header p {
+  color: #9ca3af;
+  font-size: 1.1rem;
+}
+
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* ऑटोमैटिक रिस्पॉन्सिव ग्रिड */
+  gap: 2rem;
+  align-items: start;
+}
+
+.box {
+  background: #1f2937; /* प्यारा सा डार्क ग्रे बैकग्राउंड */
+  border: 1px solid #374151;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.box h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #3b82f6; /* हेडिंग का कलर ब्लू */
+  border-bottom: 1px solid #374151;
+  padding-bottom: 0.5rem;
+}
+
+/* बटन को लाइन में लाने के लिए */
+.demoRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+}
