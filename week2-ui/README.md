@@ -1,16 +1,64 @@
-# React + Vite
+# 🚀 React UI Component Library - Week 2 Submission
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Course:** YuvaIntern Web Development Internship  
+**Submitted By:** Kaushal Kumar  
+**Registration No:** 24030485005  
+**Institution:** BIT Sindri, Jharkhand  
+**Department:** B.Tech Information Technology (2nd Year)  
+**Submission Date:** June 13, 2026  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Project Overview
+This repository contains the **Week 2 Assignment** for the YuvaIntern Web Development Internship. Moving forward from the foundational configuration in Week 1, this week focuses on building a highly modular, responsive, and accessible **React UI Component Library** from scratch without using any third-party UI frameworks (like Tailwind or Material UI).
 
-## React Compiler
+The project implements **5 core production-ready components**:
+1. **Button Component** - Supporting multiple sizes, variants, loading states, and full keyboard focus.
+2. **Input Component** - Supporting 7 data types, custom error states, a dynamic character counter, and toggleable password fields.
+3. **Card Component** - Complete with lazy-loading images, skeleton loader states, and multiple layout themes.
+4. **Modal Component** - Implemented via React Portals with an advanced accessibility focus trap and focus restoration.
+5. **Form Component** - Built with FormContext API to handle centralized validations and real-time error mapping across inputs.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack Used
+* **React 18** - Functional components with custom hooks and context tracking.
+* **Vite** - High-speed build tool and development bundler (migrated from Week 1's CRA proposal for faster performance).
+* **CSS Modules** - For encapsulated, component-scoped styling to prevent global style leaks.
+* **FormContext API** - For state management and validation propagation.
+* **PropTypes** - Enforcing strict runtime property validation.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🗂️ Updated Project Directory
+```text
+react-project/week2-ui
+|   ├── public/
+|   └── src/
+│       ├── Components/
+│       |   ├── Button/
+│       |   │   ├── Button.jsx
+│       |   │   └── Button.module.css
+│       |   ├── Card/
+│       |   │   ├── Card.jsx
+│       |   │   └── Card.module.css
+|       |   ├── Form/
+│       |   |   ├── Form.jsx
+|       |   |   ├── FormContext.jsx
+|       |   |   ├── FormField.jsx
+|       |   |   ├── FormField.module.css
+│       |   |   ├── Form.module.css
+|       |   |   └── Index.js
+|       |   ├── Input/
+│       |   │   ├── Input.jsx
+│       |   │   └── Input.module.css
+│       |   └── Modal/
+│       |       ├── Modal.jsx
+│       |       └── Modal.module.css
+│       |    
+│       ├── App.jsx                 
+│       └── main.jsx
+├── package.json
+├── package_lock.json
+└── README.md
+
