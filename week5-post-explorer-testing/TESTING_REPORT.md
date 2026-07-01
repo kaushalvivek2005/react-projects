@@ -13,7 +13,7 @@
 
 **Department:** B.Tech Information Technology (2nd Year)
 
-**Submission Date:** July 2026
+**Submission Date:** July 2, 2026
 
 ---
 
