@@ -34,6 +34,36 @@ describe("App Component", () => {
       }
     ]);
 
+    test("renders search input", async () => {
+  fetchPosts.mockResolvedValue([]);
+
+  render(<App />);
+
+  expect(
+    screen.getByRole("searchbox", {
+      name: /search posts/i
+    })
+  ).toBeInTheDocument();
+});
+
+  test("shows total post count", async () => {
+  fetchPosts.mockResolvedValue([
+    {
+      id: 1,
+      title: "Post One",
+      body: "Body One"
+    }
+  ]);
+
+  render(<App />);
+
+  await waitFor(() => {
+    expect(
+      screen.getByText(/Showing 1 of 1 Posts/i)
+    ).toBeInTheDocument();
+  });
+});
+
     render(<App />);
 
     await waitFor(() => {
