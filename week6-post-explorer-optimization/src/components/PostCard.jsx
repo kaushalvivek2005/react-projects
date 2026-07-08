@@ -1,39 +1,31 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 
 function PostCard({ post }) {
+  const [showMore, setShowMore] = useState(false);
 
-const [showMore,setShowMore]=useState(false);
+  return (
+    <article className="post-card">
+      <h2>{post.title}</h2>
 
-return(
+      <p>
+        {showMore
+          ? post.body
+          : `${post.body.slice(0, 100)}...`}
+      </p>
 
-<div className="post-card">
-
-<h2>{post.title}</h2>
-
-<p>
-
-{showMore
-
-? post.body
-
-: `${post.body.slice(0,100)}...`
-
+      <button
+        onClick={() => setShowMore(!showMore)}
+        aria-expanded={showMore}
+        aria-label={
+          showMore
+            ? "Show less content"
+            : "Read full post"
+        }
+      >
+        {showMore ? "Show Less" : "Read More"}
+      </button>
+    </article>
+  );
 }
 
-</p>
-
-<button
-onClick={()=>setShowMore(!showMore)}
->
-
-{showMore?"Show Less":"Read More"}
-
-</button>
-
-</div>
-
-)
-
-}
-
-export default PostCard;
+export default memo(PostCard);
