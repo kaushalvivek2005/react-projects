@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { fetchPosts } from "./services/api";
 import Error from './components/Error';
 import Loader from './components/Loader';
@@ -29,6 +29,15 @@ function App() {
   }, []);
 
 
+const filteredPosts = useMemo(() => {
+  return posts.filter(
+    (post) =>
+      post.title.toLowerCase().includes(search.toLowerCase()) ||
+      post.body.toLowerCase().includes(search.toLowerCase())
+  );
+}, [posts, search]);
+
+
   if (loading) {
   return <Loader />;
   }
@@ -37,23 +46,16 @@ function App() {
   return <Error message={error} />;
   }
 
-
-  const filteredPosts = posts.filter((post)=>
-  post.title.toLowerCase().includes(search.toLowerCase()) ||
-  post.body.toLowerCase().includes(search.toLowerCase())
-
-  );
-
   return (
-    <div>
+    <>
       <Navbar />
-
+      <main>
       <SearchBar
       search={search}
       setSearch={setSearch}
       />
 
-      <div className="posts-container">
+      <section className="posts-container">
         {filteredPosts.length > 0 ? (
           filteredPosts.slice(0,10).map((post) => (
             <PostCard key={post.id} post={post} />
@@ -64,8 +66,9 @@ function App() {
         <p className="post-count">
         Showing {Math.min(filteredPosts.length, 10)} of {posts.length} Posts
         </p>
-      </div>
-    </div>
+      </section>
+      </main>
+    </>
   );
 }
 
