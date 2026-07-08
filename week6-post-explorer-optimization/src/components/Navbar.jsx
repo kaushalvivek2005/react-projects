@@ -1,8 +1,8 @@
 function Navbar() {
   return (
-    <nav className="navbar">
+    <header className="navbar">
       <h1>Post Explorer</h1>
-    </nav>
+    </header>
   );
 }
 
