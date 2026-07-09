@@ -1,14 +1,12 @@
 import { render, screen } from "@testing-library/react";
 import Navbar from "../components/Navbar";
 
-
 describe("Navbar Component", () => {
-    test("renders navigation element", () => {
+
+    test("renders banner landmark", () => {
         render(<Navbar />);
 
-        const nav = screen.getByRole("navigation");
-
-        expect(nav).toBeInTheDocument();
+        expect(screen.getByRole("banner")).toBeInTheDocument();
     });
 
     test("renders heading as h1", () => {
@@ -22,8 +20,7 @@ describe("Navbar Component", () => {
     test("renders the heading 'Post Explorer'", () => {
         render(<Navbar />);
 
-        const heading = screen.getByText("Post Explorer");
-
-        expect(heading).toBeInTheDocument();
+        expect(screen.getByText("Post Explorer")).toBeInTheDocument();
     });
+
 });

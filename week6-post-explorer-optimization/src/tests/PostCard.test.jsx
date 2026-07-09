@@ -18,7 +18,9 @@ describe("PostCard Component", () => {
   test("shows Read More button initially", () => {
     render(<PostCard post={mockPost} />);
 
-    expect(screen.getByRole("button")).toHaveTextContent("Read More");
+    expect(
+      screen.getByRole("button", { name: /read full post/i })
+    ).toHaveTextContent("Read More");
   });
 
   test("changes button text after click", async () => {
@@ -26,11 +28,35 @@ describe("PostCard Component", () => {
 
     render(<PostCard post={mockPost} />);
 
-    const button = screen.getByRole("button");
+    const button = screen.getByRole("button", {
+      name: /read full post/i,
+    });
 
     await user.click(button);
 
     expect(button).toHaveTextContent("Show Less");
+  });
+
+  test("updates aria-expanded after click", async () => {
+    const user = userEvent.setup();
+
+    render(<PostCard post={mockPost} />);
+
+    const button = screen.getByRole("button", {
+      name: /read full post/i,
+    });
+
+    expect(button).toHaveAttribute("aria-expanded", "false");
+
+    await user.click(button);
+
+    expect(button).toHaveAttribute("aria-expanded", "true");
+  });
+
+  test("renders article landmark", () => {
+    render(<PostCard post={mockPost} />);
+
+    expect(screen.getByRole("article")).toBeInTheDocument();
   });
 
 });
