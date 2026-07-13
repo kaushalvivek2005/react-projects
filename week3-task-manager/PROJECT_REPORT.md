@@ -8,6 +8,7 @@
 **Department:** B.Tech Information Technology (2nd Year)
 **Date:** June 20, 2026
 **Repository:** https://github.com/kaushalvivek2005/react-project/tree/main/week3-task-manager
+**Live-Demo:** https://react-projects-three-theta.vercel.app/
 
 ---
 
